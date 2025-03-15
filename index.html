@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hammer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300..700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Quicksand", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: 100;
+            margin-bottom: 20px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            font-size: 16px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        nav a::before {
+            content: "■";
+            color: #3291ff;
+        }
+        .content {
+            margin-top: 40px;
+            max-width: 100%;
+        }
+        .headline {
+            font-size: 36px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            word-wrap: break-word;
+        }
+        .subtext {
+            font-family: "Lekton", monospace;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 50%;
+        }
+        .join-btn {
+            background: none;
+            border: 1px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            max-width: 50%;
+            text-align: center;
+        }
+        .join-btn:hover {
+            background: white;
+            color: black;
+        }
+        .message-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+        .brand-partners {
+            margin-top: 40px;
+            display: flex;
+            gap: 30px;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .brand-partners img {
+            height: 40px;
+        }
+        @media (min-width: 768px) {
+            .title {
+                font-size: 28px;
+            }
+            nav {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .headline {
+                font-size: 48px;
+            }
+            .subtext {
+                font-size: 24px;
+            }
+            .button-container {
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+                width: auto;
+            }
+            .join-btn {
+                max-width: 24%;
+            }
+            .message-link {
+                margin-top: 0;
+                margin-left: 20px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('selectstart', event => event.preventDefault());
+    </script>
+</head>
+<body>
+    <div class="title">Hammer</div>
+    <nav>
+        <a href="#">R▲</a>
+        <a href="#">WHAT WE DO</a>
+        <a href="#">SECURITY</a>
+        <a href="#">ABOUT US</a>
+    </nav>
+    <div class="content">
+        <p class="headline">WE'RE BUILDING AUTHENTIC DIGITAL IDENTITY.</p>
+        <p class="subtext">END-TO-END ENCRIPTED. SECURE WITH R▲.</p>
+        <div class="button-container">
+            <button class="join-btn">Join</button>
+            <a class="message-link" href="#">MESSAGE US ON X</a>
+        </div>
+        <div class="brand-partners">
+            <img src="logo1.png" alt="Samsung">
+            <img src="logo2.png" alt="Vercel">
+        </div>
+    </div>
+</body>
+</html>
