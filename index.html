@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hammmer</title>
+    <title>Hammer</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
         
         * {
             margin: 0;
@@ -16,7 +17,7 @@
         body {
             background-color: black;
             color: white;
-            font-family: "Quicksand", sans-serif;
+            font-family: Geist, "Geist Fallback", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             font-weight: 100;
             font-style: normal;
             display: flex;
@@ -30,41 +31,78 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            border-bottom: 1px solid white;
+            padding-bottom: 10px;
         }
         .title {
             font-size: 24px;
             font-weight: 100;
+            font-family: "Quicksand", sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
         }
         .menu-icon {
             display: none;
-            width: 25px;
-            height: 15px;
-            cursor: pointer;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            border: 2px solid white;
+            border-radius: 50px;
+            padding: 5px;
         }
         .menu-icon div {
-            width: 100%;
+            width: 18px;
             height: 2px;
             background-color: white;
             border-radius: 50px;
+            margin: 3px 0;
         }
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            font-size: 16px;
+        .menu-mobile {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            z-index: 1000;
         }
-        nav a {
+        .menu-mobile a {
             color: white;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
-        nav a::before {
-            content: "■";
-            color: #3291ff;
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            .menu-icon {
+                display: flex;
+            }
         }
         .content {
             margin-top: 40px;
@@ -75,117 +113,109 @@
             margin-top: 20px;
             text-transform: uppercase;
             word-wrap: break-word;
+            font-family: "Quicksand", sans-serif;
         }
         .subtext {
-            font-family: "Lekton", monospace;
             font-size: 14px;
             margin-top: 10px;
+            font-family: "Quicksand", sans-serif;
         }
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            margin-top: 20px;
-            width: 100%;
-            max-width: 50%;
-        }
-        .join-btn {
-            background: none;
-            border: 1px solid white;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 18px;
-            width: 100%;
-            max-width: 50%;
-            text-align: center;
-        }
-        .join-btn:hover {
-            background: white;
-            color: black;
-        }
-        .message-link {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            margin-top: 15px;
-        }
-        .brand-partners {
+        .about-security {
             margin-top: 40px;
+            font-size: 18px;
+            max-width: 800px;
+            font-family: Geist, "Geist Fallback", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+        .footer {
             display: flex;
-            gap: 30px;
-            justify-content: flex-start;
+            flex-wrap: wrap;
+            justify-content: space-between;
             width: 100%;
+            color: #A1A1A1;
+            margin-top: 40px;
         }
-        .brand-partners img {
-            height: 40px;
+        .footer-section {
+            font-size: 16px;
         }
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: flex;
-            }
-            nav {
-                display: none;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background-color: rgba(0, 0, 0, 0.9);
-                align-items: flex-start;
-                padding: 40px;
-                gap: 20px;
-            }
-            .close-menu {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 24px;
-                cursor: pointer;
-                color: white;
-            }
-            nav.active {
-                display: flex;
-            }
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: 200;
+            margin-bottom: 5px;
+            color: white;
+        }
+        .footer-section a {
+            color: #A1A1A1;
+            text-decoration: none;
+            display: block;
+            margin-top: 3px;
+        }
+        .footer-section a:hover {
+            color: white;
         }
     </style>
     <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.addEventListener('selectstart', event => event.preventDefault());
         function toggleMenu() {
-            document.querySelector('nav').classList.toggle('active');
+            document.getElementById("menu-mobile").style.display = "flex";
         }
         function closeMenu() {
-            document.querySelector('nav').classList.remove('active');
+            document.getElementById("menu-mobile").style.display = "none";
         }
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('selectstart', event => event.preventDefault());
     </script>
 </head>
 <body>
     <div class="header">
         <div class="title">Hammer</div>
+        <div class="menu">
+            <a href="#">R▲</a>
+            <a href="#">WHAT WE DO</a>
+            <a href="#">SECURITY</a>
+            <a href="#">ABOUT US</a>
+        </div>
         <div class="menu-icon" onclick="toggleMenu()">
             <div></div>
             <div></div>
         </div>
     </div>
-    <nav>
+    <div id="menu-mobile" class="menu-mobile">
         <span class="close-menu" onclick="closeMenu()">X</span>
         <a href="#">R▲</a>
         <a href="#">WHAT WE DO</a>
         <a href="#">SECURITY</a>
         <a href="#">ABOUT US</a>
-    </nav>
+    </div>
     <div class="content">
         <p class="headline">WE'RE SHAPING YOUR AUTHENTIC DIGITAL IDENTITY.</p>
-        <p class="subtext">In the noise of AI. Authentic lasting trust.</p>
-        <div class="button-container">
-            <button class="join-btn">Join</button>
-            <a class="message-link" href="#">MESSAGE US ON X</a>
+        <p class="subtext">END-TO-END ENCRYPTED. Secure with R▲.</p>
+        <div class="about-security">
+            <p>R▲ Security ensures the highest level of digital protection, integrating advanced encryption and AI-driven security measures. Our solutions provide trust, safety, in the digital landscape.</p>
         </div>
-        <div class="brand-partners">
-            <img src="logo1.png" alt="Partner 1">
-            <img src="logo2.png" alt="Partner 2">
+    </div>
+    <div class="footer">
+        <div class="footer-section">
+            <h3>Resources</h3>
+            <a href="#">Community</a>
+            <a href="#">Docs</a>
+            <a href="#">Help</a>
+            <a href="#">Pricing</a>
+            <a href="#">Resources</a>
+            <a href="#">Solution Partners</a>
+        </div>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Changelog</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-section">
+            <h3>Social</h3>
+            <a href="#">Github</a>
+            <a href="#">Twitter</a>
+            <a href="#">Youtube</a>
         </div>
     </div>
 </body>
