@@ -3,220 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hammer - Security & AI powred technology company.">
+    <meta name="keywords" content="hammer, security, ai, hammer secutrity, hammer ai">
+    <meta name="author" content="Hammer Team">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Hammer">
+    <meta property="og:description" content="Hammer - Security & AI powred technology company.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hamm.er">
     <title>Hammer</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@200&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            user-select: none;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
         body {
-            background-color: black;
-            color: white;
-            font-family: Geist, "Geist Fallback", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            font-weight: 100;
+            margin: 0;
+            font-family: "Roboto Mono", monospace;
+            font-weight: 300;
+            background-color: #000;
+            color: #A1A1A1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .mail {
             font-style: normal;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            border-bottom: 1px solid white;
-            padding-bottom: 10px;
-        }
-        .title {
-            font-size: 24px;
-            font-weight: 100;
-            font-family: "Quicksand", sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .menu {
-            display: flex;
-            gap: 20px;
-        }
-        .menu a {
-            color: white;
+            color: #006EFE;
             text-decoration: none;
-            font-size: 14px;
-        }
-        .menu-icon {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            border: 2px solid white;
-            border-radius: 50px;
-            padding: 5px;
-        }
-        .menu-icon div {
-            width: 18px;
-            height: 2px;
-            background-color: white;
-            border-radius: 50px;
-            margin: 3px 0;
-        }
-        .menu-mobile {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 20px;
-            z-index: 1000;
-        }
-        .menu-mobile a {
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .close-menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-            }
-            .menu-icon {
-                display: flex;
-            }
-        }
-        .content {
-            margin-top: 40px;
-            max-width: 100%;
-        }
-        .headline {
-            font-size: 36px;
-            margin-top: 20px;
-            text-transform: uppercase;
-            word-wrap: break-word;
-            font-family: "Quicksand", sans-serif;
-        }
-        .subtext {
-            font-size: 14px;
-            margin-top: 10px;
-            font-family: "Quicksand", sans-serif;
-        }
-        .about-security {
-            margin-top: 40px;
-            font-size: 18px;
-            max-width: 800px;
-            font-family: Geist, "Geist Fallback", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-        .footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: 100%;
-            color: #A1A1A1;
-            margin-top: 40px;
-        }
-        .footer-section {
             font-size: 16px;
-        }
-        .footer-section h3 {
-            font-size: 18px;
-            font-weight: 200;
-            margin-bottom: 5px;
-            color: white;
-        }
-        .footer-section a {
-            color: #A1A1A1;
-            text-decoration: none;
-            display: block;
-            margin-top: 3px;
-        }
-        .footer-section a:hover {
-            color: white;
+            margin-bottom: -3px;
         }
     </style>
-    <script>
-        function toggleMenu() {
-            document.getElementById("menu-mobile").style.display = "flex";
-        }
-        function closeMenu() {
-            document.getElementById("menu-mobile").style.display = "none";
-        }
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.addEventListener('selectstart', event => event.preventDefault());
-    </script>
 </head>
 <body>
-    <div class="header">
-        <div class="title">Hammer</div>
-        <div class="menu">
-            <a href="#">R▲</a>
-            <a href="#">WHAT WE DO</a>
-            <a href="#">SECURITY</a>
-            <a href="#">ABOUT US</a>
-        </div>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <div id="menu-mobile" class="menu-mobile">
-        <span class="close-menu" onclick="closeMenu()">X</span>
-        <a href="#">R▲</a>
-        <a href="#">WHAT WE DO</a>
-        <a href="#">SECURITY</a>
-        <a href="#">ABOUT US</a>
-    </div>
-    <div class="content">
-        <p class="headline">WE'RE SHAPING YOUR AUTHENTIC DIGITAL IDENTITY.</p>
-        <p class="subtext">END-TO-END ENCRYPTED. Secure with R▲.</p>
-        <div class="about-security">
-            <p>R▲ Security ensures the highest level of digital protection, integrating advanced encryption and AI-driven security measures. Our solutions provide trust, safety, in the digital landscape.</p>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="footer-section">
-            <h3>Resources</h3>
-            <a href="#">Community</a>
-            <a href="#">Docs</a>
-            <a href="#">Help</a>
-            <a href="#">Pricing</a>
-            <a href="#">Resources</a>
-            <a href="#">Solution Partners</a>
-        </div>
-        <div class="footer-section">
-            <h3>Company</h3>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="#">Careers</a>
-            <a href="#">Changelog</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Privacy Policy</a>
-        </div>
-        <div class="footer-section">
-            <h3>Social</h3>
-            <a href="#">Github</a>
-            <a href="#">Twitter</a>
-            <a href="#">Youtube</a>
-        </div>
-    </div>
+    <a href="mailto:support@hamm.er?subject=Support" class="mail">support@hamm.er</a>
+    <p>The website is under construction</p>
 </body>
 </html>
