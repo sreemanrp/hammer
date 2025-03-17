@@ -38,10 +38,22 @@
     <a href="mailto:support@hamm.er?subject=Support" class="mail">support@hamm.er</a>
     <p>Website Under Construction.</p>
 
-    <script>
+<script>
         document.addEventListener("contextmenu", function(event) {
             event.preventDefault();
         });
-    </script>
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && (event.key === "u" || event.key === "U" || event.key === "s" || event.key === "S" || event.key === "i" || event.key === "I")) {
+                event.preventDefault();
+            }
+        });
+        
+        function detectClone() {
+            if (document.documentElement.outerHTML.includes("<html")) {
+                document.body.innerHTML = "<h1 style='color: #fff500; font-size: 50px; text-align: center;'>⚡️</h1>";
+            }
+        }
+        setInterval(detectClone, 1000);
+</script>
 </body>
 </html>
