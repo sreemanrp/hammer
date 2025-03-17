@@ -49,11 +49,16 @@
         });
         
         function detectClone() {
-            if (document.documentElement.outerHTML.includes("<html")) {
+            if (window.top !== window.self) {
                 document.body.innerHTML = "<h1 style='color: #fff500; font-size: 50px; text-align: center;'>⚡️</h1>";
             }
+            const devtools = /./;
+            devtools.toString = function() {
+                document.body.innerHTML = "<h1 style='color: #fff500; font-size: 50px; text-align: center;'>⚡️</h1>";
+            };
+            console.log('%c', devtools);
         }
         setInterval(detectClone, 1000);
-</script>
+    </script>
 </body>
 </html>
